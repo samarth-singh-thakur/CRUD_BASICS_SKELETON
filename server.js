@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const path = require('path');
 const bodyparser = require('body-parser');
 const app = express();
 
@@ -21,7 +22,7 @@ app.set("view engine", "ejs");
 //load assets
 app.use('/css', express.static(path.resolve(__dirname, "assets/css")));
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")));
-app.use('/js', express.static(path.resolve(__dirname, "assets/js")));
+app.use('/js ', express.static(path.resolve(__dirname, "assets/js")));
 
 app.get('/', (req, res) => {
     res.send("Crud application");
